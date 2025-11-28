@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Air India Ahmedabad Plane Crash (2025) – Q&A Chatbot</title>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #1e535b;
+            color: #eaeaea;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .essay-section {
+            max-width: 900px;
+            margin: 40px auto;
+            line-height: 1.8;
+            font-size: 18px;
+            color: #f1f1f1;
+        }
+
+        .glow-title {
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            color: #ffffff;
+            text-shadow: 0 0 10px #6247aa;
+            margin-top: 20px;
+        }
+
+        .img-style {
+            width: 300px;
+            border-radius: 15px;
+            margin: 20px;
+            box-shadow: 0px 0px 20px rgba(100, 100, 255, 0.4);
+        }
+
+        
+        .answer-box {
+            padding: 15px;
+            border-radius: 10px;
+            min-height: 60px;
+            background: #ffffff;
+            border: 1px solid #333;
+            box-shadow: 0 0 15px rgba(150, 50, 255, 0.2);
+            color: #090909;
+        }
+
+        .question-card {
+            background: #1c1c1c;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #333;
+            box-shadow: 0 0 20px rgba(200, 50, 255, 0.1);
+        }
+
+        .footer-glow {
+            background-color: #111;
+            width: 100%;
+        }
+
+        .glow-text {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-shadow: 
+                0 0 5px #ffffff,
+                0 0 10px #00aaff,
+                0 0 20px #00aaff,
+                0 0 40px #00aaff;
+            animation: glowAnimation 2s infinite alternate;
+        }
+
+        @keyframes glowAnimation {
+            from {
+                text-shadow: 
+                    0 0 5px #ffffff,
+                    0 0 10px #00aaff,
+                    0 0 20px #00aaff,
+                    0 0 40px #00aaff;
+            }
+            to {
+                text-shadow: 
+                    0 0 10px #ffffff,
+                    0 0 20px #00ccff,
+                    0 0 30px #00ccff,
+                    0 0 60px #00ccff;
+            }
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1 class="glow-title">✈️ Q&A Chatbot ✈️</h1>
+    <p class="text-center text-secondary">Ask any question based on the Ahmedabad Plane Crash 2025</p>
+
+    
+    <div class="question-card">
+        <h4 class="text-light mb-3">Ask a Question</h4>
+
+        <input id="question" type="text" class="form-control mb-3" placeholder="Type your question...">
+
+        <button class="btn btn-outline-light" onclick="askQuestion()">Get Answer</button>
+
+        <h5 class="mt-4 text-info">Answer:</h5>
+        <div id="answerBox" class="answer-box"></div>
+    </div>
+
+    
+    <div class="row justify-content-center text-center">
+        <div class="col-md-4">
+            <img src="/static/photo1.jpg" class="img-style">
+        </div>
+
+        <div class="col-md-4">
+            <img src="/static/photo2.jpg" class="img-style">
+        </div>
+
+        <div class="col-md-4">
+            <img src="/static/photo3.jpg" class="img-style">
+        </div>
+
+        <div class="col-md-4">
+            <img src="/static/photo4.jpg" class="img-style">
+        </div>
+
+        <div class="col-md-4">
+            <img src="/static/photo5.jpg" class="img-style">
+        </div>
+
+        <div class="col-md-4">
+            <img src="/static/photo6.jpg" class="img-style">
+        </div>
+    </div>
+
+    
+    <div class="essay-section">
+        <h3 class="text-center text-warning">📖 The Air India Ahmedabad Plane Crash (2025)</h3>
+        <div class="essay-section">
+             {{ essay.replace('\n', '<br><br>') | safe }}
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+    function askQuestion() {
+        let question = document.getElementById("question").value;
+
+        fetch("/ask", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ question: question })
+        })
+        .then(res => res.json())
+        .then(data => {
+            document.getElementById("answerBox").innerText = data.answer;
+        });
+    }
+</script>
+
+<footer class="footer-glow text-center py-4 mt-5">
+    <p class="glow-text">Created by: <strong>"Jahanvi Bagthaliya"</strong></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+pandas
+regex
+nltk
+matplotlib
+scikit-learn
+indic-nlp-library
+beautifulsoup4
+sklearn-crfsuite
+seaborn
+streamlit
+transformers
+sentence-transformers
+torch
+sentencepiece
+flask
